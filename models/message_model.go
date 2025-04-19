@@ -7,9 +7,9 @@ import (
 )
 
 type Message struct {
-	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id,omitempty"`
+	ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Content   *string            `json:"content" bson:"content" validate:"required,min=2,max=350"`
-	UserID    *string            `json:"user_id" bson:"user_id" validate:"required"`
+	SenderID  *string            `json:"sender_id" bson:"sender_id" validate:"required"`
+	RoomID    *string            `json:"room_id" bson:"room_id" validate:"required"`
 	CreatedAt time.Time          `json:"created_at" bson:"created_at"`
-	UpdatedAt time.Time          `json:"updated_at" bson:"updated_at"`
 }
